@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_hooks_hooks",
+  "info": {
+    "displayName": "Hook",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "Head": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

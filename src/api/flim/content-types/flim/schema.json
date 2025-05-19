@@ -1,26 +1,22 @@
 {
   "kind": "collectionType",
-  "collectionName": "articles",
+  "collectionName": "flims",
   "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Article"
+    "singularName": "flim",
+    "pluralName": "flims",
+    "displayName": "flims"
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "title": {
+    "Heading": {
       "type": "string"
     },
     "description": {
       "type": "text"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "cover": {
+    "media": {
       "allowedTypes": [
         "images",
         "files",
@@ -29,6 +25,12 @@
       ],
       "type": "media",
       "multiple": true
+    },
+    "Hook": {
+      "displayName": "Hook",
+      "type": "component",
+      "repeatable": true,
+      "component": "hooks.hook"
     }
   }
 }
