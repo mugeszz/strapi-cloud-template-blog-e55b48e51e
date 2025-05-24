@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_colour_productcolours",
+  "info": {
+    "displayName": "Productcolour",
+    "icon": "cup",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "colour": {
+      "type": "string"
+    }
+  }
+}

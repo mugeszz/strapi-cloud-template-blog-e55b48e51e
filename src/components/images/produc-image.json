@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_images_produc_images",
+  "info": {
+    "displayName": "Produc Image",
+    "icon": "sun"
+  },
+  "options": {},
+  "attributes": {
+    "colorname": {
+      "type": "string"
+    },
+    "productimagecolour": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

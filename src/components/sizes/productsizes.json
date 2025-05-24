@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sizes_productsizes",
+  "info": {
+    "displayName": "Productsizes",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "string"
+    }
+  }
+}
