@@ -40,6 +40,16 @@
       "type": "component",
       "repeatable": true,
       "component": "images.produc-image"
+    },
+    "ProductImages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

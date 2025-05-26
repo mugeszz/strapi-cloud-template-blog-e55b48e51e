@@ -27,15 +27,14 @@ export interface HooksHook extends Struct.ComponentSchema {
 export interface ImagesProducImage extends Struct.ComponentSchema {
   collectionName: 'components_images_produc_images';
   info: {
+    description: '';
     displayName: 'Produc Image';
     icon: 'sun';
   };
   attributes: {
     colorname: Schema.Attribute.String;
-    productimagecolour: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    productimagecolour: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
   };
 }
 

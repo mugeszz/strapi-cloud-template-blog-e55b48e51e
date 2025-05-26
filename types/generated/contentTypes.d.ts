@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
+    description: '';
     displayName: 'Article';
     pluralName: 'articles';
     singularName: 'article';
@@ -394,6 +395,9 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'api::article.article'
     > &
       Schema.Attribute.Private;
+    ProductImages: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
@@ -487,6 +491,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     Productcolour: Schema.Attribute.Component<'colour.productcolour', true>;
     Productdescription: Schema.Attribute.Blocks;
     productimages: Schema.Attribute.Component<'images.produc-image', true>;
+    ProductImages: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Productprice: Schema.Attribute.Integer;
     producttitle: Schema.Attribute.String;
     Prosuctsizes: Schema.Attribute.Component<'sizes.productsizes', true>;
