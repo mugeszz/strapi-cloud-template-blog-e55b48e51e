@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tour_packages",
+  "info": {
+    "singularName": "tour-package",
+    "pluralName": "tour-packages",
+    "displayName": "TourPackage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Tourtitle": {
+      "type": "string"
+    },
+    "tourdescription": {
+      "type": "text"
+    },
+    "Price": {
+      "type": "integer"
+    },
+    "Duration": {
+      "type": "integer"
+    },
+    "locationgallery": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Hsn": {
+      "type": "string"
+    }
+  }
+}

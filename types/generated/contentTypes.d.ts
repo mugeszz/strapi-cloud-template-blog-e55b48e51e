@@ -505,6 +505,43 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTourPackageTourPackage extends Struct.CollectionTypeSchema {
+  collectionName: 'tour_packages';
+  info: {
+    description: '';
+    displayName: 'TourPackage';
+    pluralName: 'tour-packages';
+    singularName: 'tour-package';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Duration: Schema.Attribute.Integer;
+    Hsn: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tour-package.tour-package'
+    > &
+      Schema.Attribute.Private;
+    locationgallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Price: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    tourdescription: Schema.Attribute.Text;
+    Tourtitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1018,6 +1055,7 @@ declare module '@strapi/strapi' {
       'api::custom.custom': ApiCustomCustom;
       'api::flim.flim': ApiFlimFlim;
       'api::product.product': ApiProductProduct;
+      'api::tour-package.tour-package': ApiTourPackageTourPackage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
