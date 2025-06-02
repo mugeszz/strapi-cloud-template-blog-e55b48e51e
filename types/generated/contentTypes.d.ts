@@ -407,6 +407,40 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCategoriesListCategoriesList
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'categories_lists';
+  info: {
+    displayName: 'Categories_list';
+    pluralName: 'categories-lists';
+    singularName: 'categories-list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::categories-list.categories-list'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCustomCustom extends Struct.CollectionTypeSchema {
   collectionName: 'customs';
   info: {
@@ -1052,6 +1086,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::article.article': ApiArticleArticle;
+      'api::categories-list.categories-list': ApiCategoriesListCategoriesList;
       'api::custom.custom': ApiCustomCustom;
       'api::flim.flim': ApiFlimFlim;
       'api::product.product': ApiProductProduct;
